@@ -2,7 +2,7 @@ import prismaClient from "../../prisma";
 import { hash } from "bcryptjs";
 import {UserRequest} from "../../models/interface/user/UserRequest"
 
-class CreateService{
+class CreateUserService{
 
     async execute({name,email,password}: UserRequest) {
         if(!email){
@@ -42,4 +42,4 @@ class CreateService{
     }
 
 }
-export { CreateService }
+export { CreateUserService }
