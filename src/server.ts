@@ -7,9 +7,8 @@ const port = 3333;
 app.use(express.json());
 app.use(router);
 
-app.use((err: Error, request: Request, response: Response, next: NextFunction)
-=>{
-    if(err instanceof Error){
+app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
+    if (err instanceof Error) {
         return response.status(400).json({
             error: err.message,
         });
@@ -21,5 +20,5 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction)
 })
 
 app.listen(port, () => {
-    console.log("Servidor rodando na porta 3333 - Projeto Controle de Estoque")
+    console.log("Servidor rodando na porta 3333 - Projeto Controle de Estoque curso NodeJs")
 });
