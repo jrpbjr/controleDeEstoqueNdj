@@ -1,5 +1,5 @@
 import prismaClient from "../../prisma";
-import { EditCategoryRequest } from "../../controllers/category/EditCategoryRequest";
+import { EditCategoryRequest } from "../../models/interface/user/category/EditCategoryRequest";
 
 class EditCategoryService {
     async execute({name, category_id}: EditCategoryRequest){
