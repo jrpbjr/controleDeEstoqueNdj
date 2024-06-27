@@ -10,6 +10,7 @@ import { CreateCategoryController } from "./controllers/category/CreateCategoryC
 import { EditCategoryController } from "./controllers/category/EditCategoryController";
 import { ListCategoryController } from "./controllers/category/ListCategoryController";
 import { RemoveCategoryController } from "./controllers/category/RemoveCategoryController";
+import { CreateProductController } from "./controllers/product/CreateProductController";
 
 
 
@@ -32,5 +33,8 @@ router.post('/category',isAuthenticated,new CreateCategoryController().handle);
 router.put('/category/edit', isAuthenticated,new EditCategoryController().handle);
 router.get('/category/all', isAuthenticated,new ListCategoryController().handle);
 router.delete('/category/remove',isAuthenticated,new RemoveCategoryController().handle);
+
+//product Routes
+router.post('/product', isAuthenticated, upload.single("file"), new CreateProductController().handle);
 
 export { router };
