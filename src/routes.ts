@@ -1,4 +1,6 @@
 import { Router, Request, Response} from "express";
+import multer from "multer";
+import uploadConfig from "./config/multer";
 import { CreateUserController } from "./controllers/user/CreateUserController";
 import { AuthUserController } from "./controllers/user/AuthUserController"
 import { DetailUserController } from "./controllers/user/DetailUserController";
@@ -9,7 +11,12 @@ import { EditCategoryController } from "./controllers/category/EditCategoryContr
 import { ListCategoryController } from "./controllers/category/ListCategoryController";
 import { RemoveCategoryController } from "./controllers/category/RemoveCategoryController";
 
+
+
 const router = Router();
+//configurando local de upload do arquivo
+const upload = multer(uploadConfig.upload("./tmp"));
+
 router.get("/test", (request: Request, response: Response) => {
     return response.json({ ok: true });
 });
