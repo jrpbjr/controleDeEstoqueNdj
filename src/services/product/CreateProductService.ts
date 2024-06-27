@@ -1,5 +1,5 @@
 import prismaClient from "../../prisma";
-import { ProductRequest } from "../../models/interface/product/Productrequest";
+import { ProductRequest } from "../../models/interface/product/ProductRequest";
 
 class CreateProductService {
 
