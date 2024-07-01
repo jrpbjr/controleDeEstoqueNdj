@@ -10,3 +10,5 @@ class RemoveProductController{
         return response.json(productDeleted);
     }
 }
+
+export {RemoveProductController}

@@ -14,6 +14,7 @@ import { CreateProductController } from "./controllers/product/CreateProductCont
 import { EditProductController } from "./controllers/product/EditProductController";
 import { ListProductByCategoryController } from "./controllers/product/ListProductByController";
 import { ListProductController } from "./controllers/product/ListProductController";
+import { RemoveProductController } from "./controllers/product/RemoveProductController";
 
 
 
@@ -42,4 +43,5 @@ router.post('/product', isAuthenticated, upload.single("file"), new CreateProduc
 router.put('/product/edit', isAuthenticated,upload.single("file"), new EditProductController().handle)
 router.get('/product', isAuthenticated, new ListProductByCategoryController().handle);
 router.get('/products', isAuthenticated, new ListProductController().handle);
+router.delete('/product/remove',isAuthenticated,new RemoveProductController().handle);
 export { router };
